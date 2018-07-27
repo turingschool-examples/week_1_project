@@ -51,7 +51,7 @@ def is_valid?(card_number)
   digits = get_digits(card_number)
   doubled_every_other = double_every_other(digits)
   summed = sum_over_ten(doubled_every_other)
-  sum = sum_digits(summed_over_ten)
+  sum = sum_digits(summed)
   validity = check_validity(sum)
   if validity
     puts "The number #{card_number} is valid"
