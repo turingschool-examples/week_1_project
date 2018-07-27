@@ -10,6 +10,14 @@ class CreditCard
     @card_number[-4..-1]
   end
 
+  def is_valid?
+    digits = get_digits(@card_number)
+    doubled_every_other = double_every_other(digits)
+    summed = sum_over_ten(doubled_every_other)
+    sum = sum_digits(summed)
+    check_validity(sum)
+  end
+
   def get_digits(card_number)
     digit_array = []
     characters = card_number.chars
@@ -57,13 +65,5 @@ class CreditCard
     else
       false
     end
-  end
-
-  def is_valid?
-    digits = get_digits(@card_number)
-    doubled_every_other = double_every_other(digits)
-    summed = sum_over_ten(doubled_every_other)
-    sum = sum_digits(summed)
-    check_validity(sum)
   end
 end
