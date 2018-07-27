@@ -1,34 +1,28 @@
 def get_digits(card_number)
-  digit_array = []
   characters = card_number.chars
-  characters.each do |character|
-    digit_array << character.to_i
+  characters.map do |character|
+    character.to_i
   end
-  digit_array
 end
 
 def double_every_other(array_of_digits)
-  doubled = []
-  array_of_digits.each.with_index do |digit, index|
+  array_of_digits.map.with_index do |digit, index|
     if index.even?
-      doubled << digit * 2
+      digit * 2
     else
-      doubled << digit
+      digit
     end
   end
-  doubled
 end
 
 def sum_over_ten(digits)
-  summed_over_ten = []
-  digits.each do |digit|
+  digits.map do |digit|
     if digit > 9
-      summed_over_ten << digit - 9
+      digit - 9
     else
-      summed_over_ten << digit
+      digit
     end
   end
-  summed_over_ten
 end
 
 def sum_digits(digits)
