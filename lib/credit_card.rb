@@ -1,8 +1,13 @@
 class CreditCard
-  attr_reader :card_number
+  attr_reader :card_number, :limit
 
-  def initialize(card_number)
+  def initialize(card_number, limit)
     @card_number = card_number
+    @limit = limit
+  end
+
+  def last_four
+    @card_number[-4..-1]
   end
 
   def get_digits(card_number)
