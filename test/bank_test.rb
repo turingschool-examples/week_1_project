@@ -20,7 +20,7 @@ class BankTest < Minitest::Test
     assert_equal false, bank.valid_transaction?(100, credit_card)
   end
 
-  def test_it_knows_a_transactions_is_invalid_when_the_amount_it_over_the_limit
+  def test_it_knows_a_transactions_is_invalid_when_the_amount_is_over_the_limit
     bank = Bank.new("Wells Fargo")
     credit_card = CreditCard.new("5541808923795240", 15000)
     assert_equal false, bank.valid_transaction?(20000, credit_card)
